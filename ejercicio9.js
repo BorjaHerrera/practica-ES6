@@ -1,0 +1,37 @@
+const movies = [
+  {
+    title: 'Bracula: Condemor II',
+    duration: 192,
+    categories: ['comedia', 'aventura']
+  },
+  {
+    title: 'Spider-Man: No Way Home',
+    duration: 122,
+    categories: ['aventura', 'acción']
+  },
+  {
+    title: 'The Voices',
+    duration: 223,
+    categories: ['comedia', 'thriller']
+  },
+  {
+    title: 'Shrek',
+    duration: 111,
+    categories: ['comedia', 'aventura', 'animación']
+  }
+];
+
+const categoryFilter = [];
+
+const getCategories = () => {
+  for (const movie of movies) {
+    for (const category of movie.categories) {
+      if (!categoryFilter.includes(category)) {
+        categoryFilter.push(category);
+      }
+    }
+  }
+  return categoryFilter;
+};
+getCategories();
+console.log(categoryFilter);
